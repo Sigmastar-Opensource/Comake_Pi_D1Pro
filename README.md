@@ -55,7 +55,7 @@ Comake Pi D1Pro 是一块基于 SigmaStar SSD2366G 主控芯片的开发板。�
 | M7 HSADB | 扩展座 | 40P 扩展座，引 HSADB（GPIOF_01~20），3.3V 电平 | 引出 GPIO 等信号用于扩展外设（扩展模块） |
 | CON4 MIPI | MIPI 屏接口 | 40Pin FPC（0.5mm 上接） | 连接 MIPI 屏输出画面（FPC 排线、MIPI 屏） |
 | CON5 | 触摸屏接口 | 6Pin FPC 触摸屏接口 | 连接触摸屏，实现触摸输入与界面交互（FPC 排线、触摸屏） |
-| J1 MIPI Sensor | MIPI Sensor 接口 | 36Pin FPC（0.5mm 下接），支持 MIPI RX 4lane / 2lane / 2+2lane 和 DVP/BT656 | 连接摄像头采集图像（FPC 排线、摄像头） |
+| J1 MIPI Sensor | MIPI Sensor 接口 | 36Pin FPC（0.5mm 下接），支持 MIPI RX 2lane | 连接摄像头采集图像（FPC 排线、摄像头） |
 | MIC1 | 麦克风接口 | 2.0mm 2P 模拟麦克风接口 | 采集音频信号输入系统（麦克风） |
 | SPK_R1 | 喇叭接口 | 2.0mm 2P 喇叭接口，建议接 4Ω，经 CS8138S（UA1）功放 | 输出音频，驱动喇叭播放（喇叭） |
 | CON10~CON13 | CAN 接口 | 4 路隔离 CAN，TPT71044 收发器，3P 端子：1=H、2=L、3=GNDI | 工业 CAN 总线通信 |
@@ -327,7 +327,7 @@ bash D1Pro_linux_setup.sh build_image
 
     ![串口接线示意图](https://cdn.jsdelivr.net/gh/Sigmastar-Opensource/Comake_Pi_D1Pro@main/mymedia/connection.jpg)
 
-2. 打开 MobaXterm 工具，依次点击 Session、Serial，Serial Port 根据设备管理器选择（如 COM4），Speed (bps) 选择 1500000，最后点击 OK 连接串口。
+2. 打开 MobaXterm 工具，依次点击 Session、Serial，Serial Port 根据设备管理器选择（如 COM5），Speed (bps) 选择 1500000，最后点击 OK 连接串口。
 
     ![MobaXterm 串口配置](https://cdn.jsdelivr.net/gh/Sigmastar-Opensource/Comake_Pi_D1Pro@main/mymedia/mobaxterm.png)
 
