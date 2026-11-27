@@ -47,8 +47,8 @@ Comake Pi D1Pro 是一块基于 SigmaStar SSD2366G 主控芯片的开发板。�
 | J3 JTAG | JTAG 接口 | ARM EJ JTAG | ARM 核调试 |
 | CONG1 | 千兆网络接口 | RJ45 接口，支持 10 / 100 / 1000Mbps 自适应 | 连接网络，支持网络通信与 TFTP 升级（网线） |
 | CONR1 | 百兆网络接口 | RJ45 接口 | 连接网络，支持百兆网络通信（网线） |
-| CONU1 | USB2.0 Type-C 接口 | Type-C 16P，接 SoC USB2.0 P0 | Device 模式烧录固件，或 Host 模式接 U 盘（USB 数据线、U 盘） |
-| CONU2 | USB3.0 Type-C 接口 | Type-C 24P，接 USB2.0 P1 和 USB3.0 超速对 | 连接高速 USB 外设（USB 数据线） |
+| CONU1 | USB2.0 Type-C 接口 | Type-C 16P，接 SoC USB2.0 P0 | Device 模式烧录固件，或 Host 模式接 U 盘（USB 数据线、U 盘），默认device模式 |
+| CONU2 | USB3.0 Type-C 接口 | Type-C 24P，接 USB2.0 P1 和 USB3.0 超速对 | 连接高速 USB 外设（USB 数据线），默认host模式 |
 | CONP1 PCIe | PCIe 接口 | PCIe x4 物理插槽（实际 x1） | 连接 PCIe 设备，扩展高速外设（PCIe 扩展卡） |
 | M5 | 80P 座 | 80Pin 扩展座，引 MIPI TX、PM_I2C、复位和 1V8 / 3V3 / 5V_PERI | 预留给 MIPI 转 HDMI 子板 |
 | M6 HSPB | 扩展座 | 40P 扩展座，引 HSPB（GPIOG_00~25），1.8V 电平 | 引出 GPIO 等信号用于扩展外设（扩展模块） |
@@ -304,7 +304,7 @@ SourceCode/
 bash D1Pro_linux_setup.sh build_image
 ```
 
-其中 `SourceCode/project/image/output/images` 目录生成的 `SgsUsbImage_xxxx(date).bin` 为 USB 升级包，制作与升级方法详见[固件升级](#6-固件升级)。
+其中 `SourceCode/project/image/output/images` 目录生成的 `USB_UPGRADE_UFU.bin` 为 USB 升级包，制作与升级方法详见[固件升级](#6-固件升级)。
 
 ---
 
@@ -348,9 +348,9 @@ bash D1Pro_linux_setup.sh build_image
 
 ### 6.4 整包固件升级
 
-USB 升级包可通过 SDK 中的 `make image-usb-factory` 或脚本 `./image/makefiletools/script/make_usb_factory_sgs.sh -f` 生成（在 `SourceCode/project` 目录下执行），输出在 `SourceCode/project/image/output/images/SgsUsbImage_xxxx(date).bin`。
+USB 升级包可通过 SDK 中的 `make image-usb-factory` 或脚本 `./image/makefiletools/script/make_usb_factory_sgs.sh -f` 生成（在 `SourceCode/project` 目录下执行），输出在 `SourceCode/project/image/output/images/Usb_Ufu_Upgrade/USB_UPGRADE_UFU.bin`。
 
-打开 “USB Factory Tool.exe”，选择 `SgsUsbImage_xxxx(date).bin`，待已连接设备全部识别后，点击 “start” 开始整包升级。
+打开 “USB Factory Tool.exe”，选择 `USB_UPGRADE_UFU.bin`，待已连接设备全部识别后，点击 “start” 开始整包升级。
 
 ![整包固件升级](https://cdn.jsdelivr.net/gh/Sigmastar-Opensource/Comake_Pi_D1Pro@main/mymedia/usb-5.png)
 
