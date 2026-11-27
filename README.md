@@ -30,7 +30,7 @@ Comake Pi D1Pro 是一块基于 SigmaStar SSD2366G 主控芯片的开发板。�
 
 ![Comake Pi D1Pro 开发板接口模块示意图](https://cdn.jsdelivr.net/gh/Sigmastar-Opensource/Comake_Pi_D1Pro@main/mymedia/demoboard_front.png)
 
-#### 1.3.3 接口概览
+#### 1.3.2 接口概览
 
 | 接口（模块） | 名称 | 规格 | 用途（外设） |
 | --- | --- | --- | --- |
@@ -113,6 +113,9 @@ Comake Pi D1Pro 是一块基于 SigmaStar SSD2366G 主控芯片的开发板。�
 
         echo "machine git.sigmastar.com.cn login <邮箱> password <Token>" >> ~/.netrc
         chmod 600 ~/.netrc
+    例如：
+
+    ![下载凭证写入本地示例](https://cdn.jsdelivr.net/gh/Sigmastar-Opensource/Comake_Pi_D1Pro@main/mymedia/gitweb-key-example.png)
 
 2. 安装 `repo` 多仓库管理工具（下载脚本会通过它拉取 SDK 源码）：
 
@@ -131,11 +134,11 @@ Comake Pi D1Pro 是一块基于 SigmaStar SSD2366G 主控芯片的开发板。�
 ### 3.1 克隆下载脚本
 
 ```bash
-git clone https://git.sigmastar.com.cn:9090/sigmastar/download_scripts.git
+git clone -b D1Pro https://git.sigmastar.com.cn:9090/sigmastar/download_scripts.git
 cd download_scripts
 ```
 
-### 3.3 Linux SDK
+### 3.2 Linux SDK
 
 Linux SDK 提供精简的 64-bit Linux 系统（无桌面），适合产品化部署、资源受限或不需要图形界面的场景。Linux SDK 还支持直接下载预编译的固件镜像，无需本地编译。
 
@@ -297,7 +300,7 @@ SourceCode/
 
 下载完成后，使用脚本一键编译：
 
-### 5.2 Linux SDK
+### 5.1 Linux SDK
 
 ```bash
 # 编译 64-bit Linux 系统镜像
